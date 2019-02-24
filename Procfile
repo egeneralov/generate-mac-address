@@ -1,0 +1,1 @@
+web: generate-mac-address
