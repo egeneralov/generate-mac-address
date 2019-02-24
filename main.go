@@ -1,6 +1,7 @@
 package main
 
 import (
+  "os"
 	"crypto/rand"
 	"fmt"
 	"log"
@@ -37,5 +38,5 @@ func main() {
 	http.HandleFunc("/", plain_handler)
 	http.HandleFunc("/plain/", plain_handler)
 	http.HandleFunc("/json/", json_handler)
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%s", os.Getenv("PORT")),nil))
 }
